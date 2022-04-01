@@ -3,26 +3,12 @@ import { useState } from "react";
 import Header from "../components/header";
 import styles from "./home.module.css";
 import github_img from "../public/assets/github_img.svg";
-import api from "../services/api";
+import { useOrganization } from "../providers/Organization";
 
 export default function HomePage() {
   const [input, setInput] = useState("");
 
-  const [org, setOrg] = useState({});
-
-  async function handleClick() {
-    if (!input) return;
-
-    const res = await api
-      .get(`/orgs/${input}`)
-      .catch((err) => console.log(err));
-
-    setInput("");
-
-    if (!res?.data) return;
-
-    setOrg(res.data);
-  }
+  const { searchOrganization } = useOrganization();
 
   return (
     <>
@@ -42,7 +28,10 @@ export default function HomePage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-            <button className={styles.button} onClick={handleClick}>
+            <button
+              className={styles.button}
+              onClick={() => searchOrganization(input)}
+            >
               Search
             </button>
           </div>
