@@ -1,7 +1,9 @@
 {
   "name": "technical-test-apto",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "repository": "git@github.com:HenriSilva5720/Technical-Test-Apto.git",
+  "author": "henrique <henrique.da.silva5720@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
