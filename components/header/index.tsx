@@ -13,7 +13,7 @@ export default function Header() {
           <picture className={styles.image}>
             <Image src={github_icon} alt="github-logo" />
           </picture>
-          <h1 className={styles.title}>GitHub</h1>
+          <span className={styles.title}>GitHub</span>
         </div>
       </div>
     </header>
