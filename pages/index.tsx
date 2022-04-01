@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <Header />
       <main className={styles.container}>
-        <div>
+        <div className={styles.containerContent}>
           <h1 className={styles.title}>Search For Your Organization Here!</h1>
           <p className={styles.subtitle}>
             Millions of developers and companies build, ship, and maintain their
@@ -21,7 +21,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className={styles.containerImage}>
-          <picture>
+          <picture className={styles.image}>
             <Image src={github_img} alt="github-image" />
           </picture>
         </div>

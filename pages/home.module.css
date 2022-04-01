@@ -1,4 +1,7 @@
 .container {
+  max-width: 500px;
+
+  margin: 0 auto;
   padding: 10px 15px 15px;
 }
 
@@ -47,6 +50,10 @@
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
+.button:active {
+  background-color: #0047b3;
+}
+
 .containerImage {
   max-width: 290px;
 
@@ -63,14 +70,56 @@
   }
 }
 
-@media only screen and (min-height: 720px) and (min-width: 1024px) {
-  .container {
-    height: calc(100vh - 100px);
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
   }
 }
 
-@media only screen and (min-height: 720px) and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .container {
-    height: calc(100vh - 120px);
+    max-width: 1440px;
+    height: calc(100vh - 100px);
+
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .containerContent {
+    max-width: 45%;
+  }
+
+  .title {
+    font-size: 3rem;
+
+    text-align: start;
+  }
+
+  .subtitle {
+    text-align: start;
+  }
+
+  .input {
+    height: 50px;
+
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 0 25px;
+
+    font-size: 1rem;
+  }
+
+  .containerImage {
+    max-width: 45%;
+    width: 400px;
+    margin: 0 0 0 20px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    height: calc(100vh - 200px);
   }
 }
