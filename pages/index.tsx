@@ -18,7 +18,7 @@ export default function HomePage() {
           <h1 className={styles.title}>Search For Your Organization Here!</h1>
           <p className={styles.subtitle}>
             Millions of developers and companies build, ship, and maintain their
-            software on GitHub—the largest and most advanced development
+            software on GitHub — the largest and most advanced development
             platform in the world.
           </p>
           <div className={styles.inputContainer}>
@@ -30,7 +30,13 @@ export default function HomePage() {
             />
             <button
               className={styles.button}
-              onClick={() => searchOrganization(input)}
+              onClick={() => {
+                if (!input) return;
+
+                searchOrganization(input);
+
+                setInput("");
+              }}
             >
               Search
             </button>
