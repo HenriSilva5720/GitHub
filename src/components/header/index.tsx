@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import github_icon from "../../public/assets/github_icon.svg";
+import github_icon from "../../../public/github_icon.svg";
 import styles from "./header.module.css";
 
 export default function Header() {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Header from "../components/header";
 import styles from "./home.module.css";
-import github_img from "../public/assets/github_img.svg";
+import github_img from "../../public/github_img.svg";
 import { useOrganization } from "../providers/Organization";
 
 export default function HomePage() {
