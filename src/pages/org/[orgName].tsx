@@ -3,6 +3,9 @@ import Link from "next/link";
 import Header from "../../components/header";
 import { useOrganization } from "../../providers/Organization";
 import styles from "./organization.module.css";
+import { MdOutlineLocationOn } from "react-icons/md";
+import { RiTwitterLine } from "react-icons/ri";
+import { BiLink } from "react-icons/bi";
 
 export default function OrganizationPage() {
   const { organization } = useOrganization();
@@ -36,22 +39,33 @@ export default function OrganizationPage() {
             </div>
             <p className={styles.description}>{organization.description}</p>
             <div className={styles.containerSocial}>
-              <span>{organization.location}</span>
-              <Link
-                href={`https://twitter.com/${organization.twitter_username}`}
-                passHref
-              >
-                <a
-                  className={styles.social}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >{`@${organization.twitter_username}`}</a>
-              </Link>
-              <Link href={organization.blog} passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  {organization.blog}
-                </a>
-              </Link>
+              <div className={styles.social}>
+                <MdOutlineLocationOn className={styles.icon} />
+                <span>{organization.location}</span>
+              </div>
+              <div className={styles.social}>
+                <RiTwitterLine className={styles.icon} />
+                <Link
+                  href={`https://twitter.com/${organization.twitter_username}`}
+                  passHref
+                >
+                  <a
+                    className={styles.social}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {`@${organization.twitter_username}`}
+                  </a>
+                </Link>
+              </div>
+              <div className={styles.social}>
+                <BiLink className={styles.icon} />
+                <Link href={organization.blog} passHref>
+                  <a target="_blank" rel="noopener noreferrer">
+                    {organization.blog}
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
