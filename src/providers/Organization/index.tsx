@@ -37,6 +37,7 @@ interface IOrganizationRepos {
 
 interface IOrganizationProps {
   organization: IOrganization;
+  organizationRepos: IOrganizationRepos[];
   searchOrganization: (a: string) => Promise<void>;
 }
 
@@ -73,7 +74,9 @@ export function OrganizationProvider({ children }: IProvidersProps) {
   }
 
   return (
-    <OrganizationContext.Provider value={{ organization, searchOrganization }}>
+    <OrganizationContext.Provider
+      value={{ organization, organizationRepos, searchOrganization }}
+    >
       {children}
     </OrganizationContext.Provider>
   );

@@ -8,7 +8,7 @@ import { RiTwitterLine } from "react-icons/ri";
 import { BiLink, BiFolder } from "react-icons/bi";
 
 export default function OrganizationPage() {
-  const { organization } = useOrganization();
+  const { organization, organizationRepos } = useOrganization();
 
   return (
     <>
