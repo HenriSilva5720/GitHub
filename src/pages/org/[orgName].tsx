@@ -9,6 +9,7 @@ import styles from "./organization.module.css";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { RiTwitterLine } from "react-icons/ri";
 import { BiLink, BiFolder } from "react-icons/bi";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 interface IOrganizationRepoLicense {
   spdx_id: string;
@@ -38,7 +39,7 @@ export default function OrganizationPage() {
       .get(`orgs/${organization.login}/repos?per_page=10&page=${page}`)
       .then((res) => setOrganizationRepos(res.data))
       .catch((err) => console.log(err));
-  }, [page]);
+  }, [page, organization.login]);
 
   function previewPage() {
     if (page <= 0) return;
@@ -139,9 +140,30 @@ export default function OrganizationPage() {
               <RepoCard repository={repo} />
             </div>
           ))}
-          <div>
-            <button onClick={previewPage}>preview</button>
-            <button onClick={nextPage}>next</button>
+          <div className={styles.containerPageButtons}>
+            <button
+              className={styles.button}
+              disabled={page === 1 && true}
+              onClick={previewPage}
+            >
+              <RiArrowLeftSLine className={styles.buttonIcon} />
+              Preview
+            </button>
+            <div className={styles.containerPageNumbers}>
+              {page > 1 && <div className={styles.number}>{page - 1}</div>}
+              <div className={styles.currentPage}>{page}</div>
+              {organizationRepos.length === 10 && (
+                <div className={styles.number}>{page + 1}</div>
+              )}
+            </div>
+            <button
+              className={styles.button}
+              disabled={organizationRepos.length < 10 && true}
+              onClick={nextPage}
+            >
+              Next
+              <RiArrowRightSLine className={styles.buttonIcon} />
+            </button>
           </div>
         </section>
       </main>
