@@ -36,7 +36,7 @@ export default function OrganizationPage() {
 
   useEffect(() => {
     api
-      .get(`orgs/${organization.login}/repos?per_page=10&page=${page}`)
+      .get(`/orgs/${organization.login}/repos?per_page=10&page=${page}`)
       .then((res) => setOrganizationRepos(res.data))
       .catch((err) => console.log(err));
   }, [page, organization.login]);
@@ -152,10 +152,21 @@ export default function OrganizationPage() {
               </button>
             </a>
             <div className={styles.containerPageNumbers}>
-              {page > 1 && <div className={styles.number}>{page - 1}</div>}
+              {page > 1 && (
+                <a href="#top" className={styles.backToTop}>
+                  <div
+                    className={styles.number}
+                    onClick={() => setPage(page - 1)}
+                  >
+                    {page - 1}
+                  </div>
+                </a>
+              )}
               <div className={styles.currentPage}>{page}</div>
               {organizationRepos.length === 10 && (
-                <div className={styles.number}>{page + 1}</div>
+                <a href="#top" className={styles.backToTop}>
+                  <div className={styles.number}>{page + 1}</div>
+                </a>
               )}
             </div>
             <a href="#top" className={styles.backToTop}>

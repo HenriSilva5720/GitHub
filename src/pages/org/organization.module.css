@@ -135,6 +135,8 @@
   margin: 20px 0 10px;
 
   display: flex;
+
+  user-select: none;
 }
 
 .button {
@@ -157,12 +159,15 @@
   margin: 0 10px;
 
   display: flex;
+
+  user-select: none;
 }
 
 .number,
 .currentPage {
   padding: 0 6px;
 
+  color: var(--black);
   text-align: center;
 
   cursor: pointer;
