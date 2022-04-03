@@ -1,15 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import Header from "../../components/header";
 import RepoCard from "../../components/repoCard";
 import { useOrganization } from "../../providers/Organization";
+import api from "../../services/api";
 import styles from "./organization.module.css";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { RiTwitterLine } from "react-icons/ri";
 import { BiLink, BiFolder } from "react-icons/bi";
 
+interface IOrganizationRepoLicense {
+  spdx_id: string;
+}
+
+interface IOrganizationRepos {
+  name: string;
+  description: string;
+  language: string;
+  license: IOrganizationRepoLicense;
+  stargazers_count: number;
+  forks_count: number;
+  visibility: string;
+}
+
 export default function OrganizationPage() {
-  const { organization, organizationRepos } = useOrganization();
+  const { organization } = useOrganization();
+
+  const [organizationRepos, setOrganizationRepos] = useState<
+    IOrganizationRepos[]
+  >([]);
+
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    api
+      .get(`orgs/${organization.login}/repos?per_page=10&page=${page}`)
+      .then((res) => setOrganizationRepos(res.data))
+      .catch((err) => console.log(err));
+  }, [page]);
+
+  function previewPage() {
+    if (page <= 0) return;
+
+    setPage(page - 1);
+  }
+
+  function nextPage() {
+    if (organizationRepos.length < 10) return;
+
+    setPage(page + 1);
+  }
 
   return (
     <>
@@ -98,6 +139,10 @@ export default function OrganizationPage() {
               <RepoCard repository={repo} />
             </div>
           ))}
+          <div>
+            <button onClick={previewPage}>preview</button>
+            <button onClick={nextPage}>next</button>
+          </div>
         </section>
       </main>
     </>
