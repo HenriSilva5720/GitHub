@@ -51,7 +51,7 @@
 }
 
 .button:active {
-  background-color: #0047b3;
+  background-color: var(--dark-blue);
 }
 
 .containerImage {

@@ -3,6 +3,7 @@
   --gray: #777777;
   --white: #ffffff;
   --blue: #0066ff;
+  --dark-blue: #0047b3;
   --green: #2ea44f;
   --background-color: #f3f3f3;
 }
@@ -26,6 +27,14 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: var(--blue);
+}
+
 a:hover {
   text-decoration: underline;
+}
+
+a:visited {
+  color: var(--dark-blue);
 }
