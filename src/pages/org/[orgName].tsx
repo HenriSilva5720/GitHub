@@ -37,35 +37,43 @@ export default function OrganizationPage() {
                 {organization.is_verified ? "Verified" : "Not Verified"}
               </span>
             </div>
-            <p className={styles.description}>{organization.description}</p>
+            {organization.description && (
+              <p className={styles.description}>{organization.description}</p>
+            )}
             <div className={styles.containerSocial}>
-              <div className={styles.social}>
-                <MdOutlineLocationOn className={styles.icon} />
-                <span>{organization.location}</span>
-              </div>
-              <div className={styles.social}>
-                <RiTwitterLine className={styles.icon} />
-                <Link
-                  href={`https://twitter.com/${organization.twitter_username}`}
-                  passHref
-                >
-                  <a
-                    className={styles.social}
-                    target="_blank"
-                    rel="noopener noreferrer"
+              {organization.location && (
+                <div className={styles.social}>
+                  <MdOutlineLocationOn className={styles.icon} />
+                  <span>{organization.location}</span>
+                </div>
+              )}
+              {organization.twitter_username && (
+                <div className={styles.social}>
+                  <RiTwitterLine className={styles.icon} />
+                  <Link
+                    href={`https://twitter.com/${organization.twitter_username}`}
+                    passHref
                   >
-                    {`@${organization.twitter_username}`}
-                  </a>
-                </Link>
-              </div>
-              <div className={styles.social}>
-                <BiLink className={styles.icon} />
-                <Link href={organization.blog} passHref>
-                  <a target="_blank" rel="noopener noreferrer">
-                    {organization.blog}
-                  </a>
-                </Link>
-              </div>
+                    <a
+                      className={styles.social}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {`@${organization.twitter_username}`}
+                    </a>
+                  </Link>
+                </div>
+              )}
+              {organization.blog && (
+                <div className={styles.social}>
+                  <BiLink className={styles.icon} />
+                  <Link href={organization.blog} passHref>
+                    <a target="_blank" rel="noopener noreferrer">
+                      {organization.blog}
+                    </a>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
