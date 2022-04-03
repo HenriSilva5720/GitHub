@@ -1,0 +1,105 @@
+.repo {
+  padding: 5px 10px;
+
+  border: 2px solid var(--gray);
+  border-radius: 10px;
+}
+
+.containerRepoInfo {
+  display: flex;
+  align-items: center;
+}
+
+.repoTitle {
+  margin-right: 10px;
+
+  color: var(--blue);
+}
+
+.repoVisibility {
+  padding: 0 5px;
+
+  font-size: 0.7rem;
+  color: var(--gray);
+
+  border: 2px solid var(--gray);
+  border-radius: 15px;
+}
+
+.repoDescription {
+  margin-bottom: 5px;
+
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.containerTag {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.tag {
+  padding: 2px 8px;
+
+  color: var(--white);
+  font-size: 0.8rem;
+
+  background-color: var(--gray);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 2px;
+
+  font-size: 1rem;
+}
+
+.tag + .tag {
+  margin-left: 3px;
+}
+
+.tagHTML {
+  background-color: #e34c26;
+}
+
+.tagJS {
+  background-color: #f1e05a;
+}
+
+.tagTS {
+  background-color: #2b7489;
+}
+
+.tagPython {
+  background-color: #3572a5;
+}
+
+.tagRust {
+  background-color: #dea584;
+}
+
+.tagSwift {
+  background-color: #f05138;
+}
+
+.tagRuby {
+  background-color: #701516;
+}
+
+.tagPHP {
+  background-color: #4f5d95;
+}
+
+.tagC {
+  background-color: #00a000;
+}
+
+.tagJava {
+  background-color: #b07219;
+}

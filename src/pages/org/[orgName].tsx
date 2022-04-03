@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../../components/header";
+import RepoCard from "../../components/repoCard";
 import { useOrganization } from "../../providers/Organization";
 import styles from "./organization.module.css";
 import { MdOutlineLocationOn } from "react-icons/md";
@@ -90,6 +91,13 @@ export default function OrganizationPage() {
             <hr className={styles.sectionBar} />
           </div>
           <hr className={styles.dividerBar} />
+        </section>
+        <section className={styles.containerRepos}>
+          {organizationRepos.map((repo, idx) => (
+            <div key={idx} className={styles.containerRepo}>
+              <RepoCard repository={repo} />
+            </div>
+          ))}
         </section>
       </main>
     </>
