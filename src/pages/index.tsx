@@ -48,7 +48,15 @@ export default function HomePage() {
         </div>
         <div className={styles.containerImage}>
           <picture>
-            <Image src={github_img} alt="github-image" />
+            <Image
+              src={github_img}
+              alt="github-image"
+              priority={true}
+              placeholder="blur"
+              blurDataURL={
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
+              }
+            />
           </picture>
         </div>
       </main>
