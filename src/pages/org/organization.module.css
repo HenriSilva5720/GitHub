@@ -20,6 +20,30 @@
 }
 
 .containerTitle {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin-right: 10px;
+}
+
+.verified,
+.notVerified {
+  padding: 0 5px;
+
+  font-size: 0.7rem;
+
+  border: 2px solid;
+  border-radius: 20px;
+}
+
+.verified {
+  color: var(--green);
+}
+
+.notVerified {
+  color: var(--red);
 }
 
 .description {

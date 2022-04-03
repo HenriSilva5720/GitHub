@@ -23,7 +23,16 @@ export default function OrganizationPage() {
           </picture>
           <div className={styles.containerContent}>
             <div className={styles.containerTitle}>
-              <h1>{organization.name}</h1>
+              <h1 className={styles.name}>{organization.name}</h1>
+              <span
+                className={
+                  organization.is_verified
+                    ? styles.verified
+                    : styles.notVerified
+                }
+              >
+                {organization.is_verified ? "Verified" : "Not Verified"}
+              </span>
             </div>
             <p className={styles.description}>{organization.description}</p>
             <div className={styles.containerSocial}>

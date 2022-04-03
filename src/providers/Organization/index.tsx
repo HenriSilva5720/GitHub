@@ -10,11 +10,12 @@ interface IProvidersProps {
 
 interface IOrganization {
   avatar_url: string;
-  description: string;
   name: string;
-  blog: string;
+  description: string;
   location: string;
   twitter_username: string;
+  blog: string;
+  is_verified: boolean;
 }
 
 interface IOrganizationProps {
