@@ -65,9 +65,11 @@ export default function RepoCard({ repository }: IRepoCardProps) {
       </div>
       <p className={styles.repoDescription}>{repository.description}</p>
       <div className={styles.containerTag}>
-        <span className={`${styles.tag} ${setLanguage(repository.language)}`}>
-          {repository.language}
-        </span>
+        {repository.language && (
+          <span className={`${styles.tag} ${setLanguage(repository.language)}`}>
+            {repository.language}
+          </span>
+        )}
         {repository.license && repository.license.spdx_id !== "NOASSERTION" && (
           <div className={styles.tag}>
             <BiShield className={styles.icon} />
