@@ -16,6 +16,7 @@ interface IOrganization {
   twitter_username: string;
   blog: string;
   is_verified: boolean;
+  public_repos: number;
 }
 
 interface IOrganizationProps {

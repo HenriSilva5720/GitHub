@@ -5,7 +5,7 @@ import { useOrganization } from "../../providers/Organization";
 import styles from "./organization.module.css";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { RiTwitterLine } from "react-icons/ri";
-import { BiLink } from "react-icons/bi";
+import { BiLink, BiFolder } from "react-icons/bi";
 
 export default function OrganizationPage() {
   const { organization } = useOrganization();
@@ -14,7 +14,7 @@ export default function OrganizationPage() {
     <>
       <Header />
       <main className={styles.container}>
-        <div className={styles.containerInfos}>
+        <section className={styles.containerInfos}>
           <picture>
             <Image
               className={styles.image}
@@ -76,7 +76,21 @@ export default function OrganizationPage() {
               )}
             </div>
           </div>
-        </div>
+        </section>
+        <section>
+          <div className={styles.containerSection}>
+            <div className={styles.sectionContent}>
+              <BiFolder className={styles.icon} />
+              <span>Repositories</span>
+              <div className={styles.sectionBoxArrow} />
+              <div className={styles.sectionBox}>
+                {organization.public_repos}
+              </div>
+            </div>
+            <hr className={styles.sectionBar} />
+          </div>
+          <hr className={styles.dividerBar} />
+        </section>
       </main>
     </>
   );

@@ -1,11 +1,11 @@
 .container {
-  max-width: 500px;
-
-  margin: 0 auto;
-  padding: 10px 15px 15px;
+  min-width: 280px;
 }
 
 .containerInfos {
+  margin: 0 auto;
+  padding: 10px 15px 15px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,6 +70,53 @@
   font-size: 1.2rem;
 }
 
+.containerSection {
+  width: fit-content;
+
+  margin: 0 auto;
+}
+
+.sectionContent {
+  display: flex;
+  align-items: center;
+}
+
+.sectionBar {
+  width: 110%;
+  height: 3px;
+
+  background-color: var(--blue);
+  border: none;
+
+  transform: translate(-5%, 2px);
+}
+
+.sectionBoxArrow {
+  margin-left: 5px;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid var(--black);
+}
+
+.sectionBox {
+  padding: 1px 3px;
+
+  font-size: 0.8rem;
+  color: var(--white);
+
+  background-color: var(--black);
+
+  border-radius: 5px;
+}
+
+.dividerBar {
+  height: 1px;
+
+  background-color: var(--gray);
+  border: none;
+}
+
 @media only screen and (min-width: 375px) {
   .containerInfos {
     flex-direction: row;
@@ -90,6 +137,20 @@
 
 @media only screen and (min-width: 768px) {
   .containerContent {
-    max-width: calc(500px - 30px - 10px - 100px);
+    max-width: calc(768px - 30px - 10px - 100px);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .containerContent {
+    max-width: 1440px;
+  }
+
+  .containerSocial {
+    flex-direction: row;
+  }
+
+  .social + .social {
+    margin-left: 10px;
   }
 }
