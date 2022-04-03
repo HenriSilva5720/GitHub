@@ -20,7 +20,7 @@ interface IOrganization {
 
 interface IOrganizationProps {
   organization: IOrganization;
-  searchOrganization: (a: string) => void;
+  searchOrganization: (a: string) => Promise<void>;
 }
 
 const OrganizationContext = createContext({} as IOrganizationProps);

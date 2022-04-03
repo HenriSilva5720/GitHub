@@ -10,6 +10,14 @@ export default function HomePage() {
 
   const { searchOrganization } = useOrganization();
 
+  async function handleClick() {
+    if (!input) return;
+
+    await searchOrganization(input);
+
+    setInput("");
+  }
+
   return (
     <>
       <Header />
@@ -27,17 +35,13 @@ export default function HomePage() {
               placeholder="Search your org"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-            />
-            <button
-              className={styles.button}
-              onClick={() => {
-                if (!input) return;
+              onKeyUp={(e) => {
+                if (e.key !== "Enter") return;
 
-                searchOrganization(input);
-
-                setInput("");
+                handleClick();
               }}
-            >
+            />
+            <button className={styles.button} onClick={handleClick}>
               Search
             </button>
           </div>
