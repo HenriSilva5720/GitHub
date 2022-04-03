@@ -165,7 +165,12 @@ export default function OrganizationPage() {
               <div className={styles.currentPage}>{page}</div>
               {organizationRepos.length === 10 && (
                 <a href="#top" className={styles.backToTop}>
-                  <div className={styles.number}>{page + 1}</div>
+                  <div
+                    className={styles.number}
+                    onClick={() => setPage(page + 1)}
+                  >
+                    {page + 1}
+                  </div>
                 </a>
               )}
             </div>
