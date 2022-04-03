@@ -3,11 +3,14 @@
 
   border: 2px solid var(--gray);
   border-radius: 10px;
+
+  word-wrap: break-word;
 }
 
 .containerRepoInfo {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .repoTitle {
@@ -27,8 +30,6 @@
 }
 
 .repoDescription {
-  margin-bottom: 5px;
-
   font-size: 0.9rem;
   color: var(--gray);
 }
@@ -40,6 +41,7 @@
 }
 
 .tag {
+  margin: 5px 5px 0 0;
   padding: 2px 8px;
 
   color: var(--white);
@@ -60,12 +62,12 @@
   font-size: 1rem;
 }
 
-.tag + .tag {
-  margin-left: 3px;
-}
-
 .tagHTML {
   background-color: #e34c26;
+}
+
+.tagCSS {
+  background-color: #563d7c;
 }
 
 .tagJS {
@@ -96,10 +98,30 @@
   background-color: #4f5d95;
 }
 
+.tagCPlus {
+  background-color: #f34b7d;
+}
+
+.tagCS {
+  background-color: #178600;
+}
+
 .tagC {
-  background-color: #00a000;
+  background-color: #555555;
 }
 
 .tagJava {
   background-color: #b07219;
+}
+
+.tagGo {
+  background-color: #00add8;
+}
+
+.tagKotlin {
+  background-color: #a97bff;
+}
+
+.tagMD {
+  background-color: #083fa1;
 }

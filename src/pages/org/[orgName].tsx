@@ -141,14 +141,16 @@ export default function OrganizationPage() {
             </div>
           ))}
           <div className={styles.containerPageButtons}>
-            <button
-              className={styles.button}
-              disabled={page === 1 && true}
-              onClick={previewPage}
-            >
-              <RiArrowLeftSLine className={styles.buttonIcon} />
-              Preview
-            </button>
+            <a href="#top" className={styles.backToTop}>
+              <button
+                className={styles.button}
+                disabled={page === 1 && true}
+                onClick={previewPage}
+              >
+                <RiArrowLeftSLine className={styles.buttonIcon} />
+                Preview
+              </button>
+            </a>
             <div className={styles.containerPageNumbers}>
               {page > 1 && <div className={styles.number}>{page - 1}</div>}
               <div className={styles.currentPage}>{page}</div>
@@ -156,14 +158,16 @@ export default function OrganizationPage() {
                 <div className={styles.number}>{page + 1}</div>
               )}
             </div>
-            <button
-              className={styles.button}
-              disabled={organizationRepos.length < 10 && true}
-              onClick={nextPage}
-            >
-              Next
-              <RiArrowRightSLine className={styles.buttonIcon} />
-            </button>
+            <a href="#top" className={styles.backToTop}>
+              <button
+                className={styles.button}
+                disabled={organizationRepos.length < 10 && true}
+                onClick={nextPage}
+              >
+                Next
+                <RiArrowRightSLine className={styles.buttonIcon} />
+              </button>
+            </a>
           </div>
         </section>
       </main>

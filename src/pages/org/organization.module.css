@@ -70,6 +70,8 @@
   width: fit-content;
 
   margin: 0 auto;
+
+  cursor: pointer;
 }
 
 .sectionContent {
@@ -162,6 +164,8 @@
   padding: 0 6px;
 
   text-align: center;
+
+  cursor: pointer;
 }
 
 .currentPage {
@@ -170,6 +174,10 @@
   background-color: var(--blue);
 
   border-radius: 5px;
+}
+
+.backToTop:hover {
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 375px) {

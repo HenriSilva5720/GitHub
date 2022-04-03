@@ -21,23 +21,8 @@ interface IOrganization {
   repos_url: string;
 }
 
-// interface IOrganizationRepoLicense {
-//   spdx_id: string;
-// }
-
-// interface IOrganizationRepos {
-//   name: string;
-//   description: string;
-//   language: string;
-//   license: IOrganizationRepoLicense;
-//   stargazers_count: number;
-//   forks_count: number;
-//   visibility: string;
-// }
-
 interface IOrganizationProps {
   organization: IOrganization;
-  // organizationRepos: IOrganizationRepos[];
   searchOrganization: (a: string) => Promise<void>;
 }
 
@@ -48,10 +33,6 @@ export function OrganizationProvider({ children }: IProvidersProps) {
 
   const [organization, setOrganization] = useState({} as IOrganization);
 
-  // const [organizationRepos, setOrganizationRepos] = useState<
-  //   IOrganizationRepos[]
-  // >([]);
-
   async function searchOrganization(organizationName: string) {
     const org = await api.get(`/orgs/${organizationName}`).catch((err) => {
       console.log(err);
@@ -61,12 +42,6 @@ export function OrganizationProvider({ children }: IProvidersProps) {
     if (!org?.data) return;
 
     setOrganization(org.data);
-
-    // const orgRepos = await api.get(
-    //   `orgs/${org.data.login}/repos?per_page=10&page=1`
-    // );
-
-    // setOrganizationRepos(orgRepos.data);
 
     router.push(`/org/${org.data.login}`);
   }

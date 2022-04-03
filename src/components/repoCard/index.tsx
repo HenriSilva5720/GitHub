@@ -25,6 +25,9 @@ export default function RepoCard({ repository }: IRepoCardProps) {
       case "HTML":
         return styles.tagHTML;
 
+      case "CSS":
+        return styles.tagCSS;
+
       case "JavaScript":
         return styles.tagJS;
 
@@ -47,10 +50,25 @@ export default function RepoCard({ repository }: IRepoCardProps) {
         return styles.tagPHP;
 
       case "C++":
+        return styles.tagCPlus;
+
+      case "C#":
+        return styles.tagCS;
+
+      case "C":
         return styles.tagC;
 
       case "Java":
         return styles.tagJava;
+
+      case "Go":
+        return styles.tagGo;
+
+      case "Kotlin":
+        return styles.tagKotlin;
+
+      case "Markdown":
+        return styles.tagMD;
 
       default:
         return styles.tag;
