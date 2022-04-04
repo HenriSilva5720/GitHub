@@ -1,14 +1,11 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Input from "../input";
+import Input from "../Input";
 import github_icon from "../../../public/github_icon.svg";
 import styles from "./header.module.css";
 import { BiSearchAlt } from "react-icons/bi";
-
-interface IHeaderProps {
-  search?: boolean;
-}
+import { IHeaderProps } from "../../types";
 
 export default function Header({ search }: IHeaderProps) {
   const router = useRouter();
@@ -28,7 +25,7 @@ export default function Header({ search }: IHeaderProps) {
           <div>
             <BiSearchAlt
               className={styles.search}
-              onClick={() => setShowInput(!showInput)}
+              onClick={() => setShowInput(true)}
             />
           </div>
         )}

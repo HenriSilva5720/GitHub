@@ -1,8 +1,9 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import Header from "../../components/header";
-import RepoCard from "../../components/repoCard";
+import Header from "../../components/Header";
+import RepoCard from "../../components/RepoCard";
 import { useOrganization } from "../../providers/Organization";
 import api from "../../services/api";
 import styles from "./organization.module.css";
@@ -10,20 +11,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { RiTwitterLine } from "react-icons/ri";
 import { BiLink, BiFolder } from "react-icons/bi";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
-
-interface IOrganizationRepoLicense {
-  spdx_id: string;
-}
-
-interface IOrganizationRepos {
-  name: string;
-  description: string;
-  language: string;
-  license: IOrganizationRepoLicense;
-  stargazers_count: number;
-  forks_count: number;
-  visibility: string;
-}
+import { IOrganizationRepos } from "../../types";
 
 export default function OrganizationPage() {
   const { organization } = useOrganization();
@@ -55,6 +43,9 @@ export default function OrganizationPage() {
 
   return (
     <>
+      <Head>
+        <title>{`GitHub - ${organization.name}`}</title>
+      </Head>
       <Header search={true} />
       <main className={styles.container}>
         <section className={styles.containerInfos}>

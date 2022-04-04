@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useOrganization } from "../../providers/Organization";
 import styles from "./input.module.css";
 import { ImCross } from "react-icons/im";
-
-interface IInputProps {
-  setShowInput: (bool: boolean) => void;
-}
+import { IInputProps } from "../../types";
 
 export default function Input({ setShowInput }: IInputProps) {
   const { searchOrganization } = useOrganization();

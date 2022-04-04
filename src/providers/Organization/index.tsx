@@ -2,29 +2,11 @@ import { createContext, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import api from "../../services/api";
-import type { ReactNode } from "react";
-
-interface IProvidersProps {
-  children: ReactNode;
-}
-
-interface IOrganization {
-  login: string;
-  avatar_url: string;
-  name: string;
-  description: string;
-  location: string;
-  twitter_username: string;
-  blog: string;
-  is_verified: boolean;
-  public_repos: number;
-  repos_url: string;
-}
-
-interface IOrganizationProps {
-  organization: IOrganization;
-  searchOrganization: (a: string) => Promise<void>;
-}
+import {
+  IOrganization,
+  IProvidersProps,
+  IOrganizationProps,
+} from "../../types";
 
 const OrganizationContext = createContext({} as IOrganizationProps);
 

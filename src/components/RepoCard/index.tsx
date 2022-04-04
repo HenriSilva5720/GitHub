@@ -1,23 +1,6 @@
 import styles from "./repoCard.module.css";
 import { BiShield, BiStar, BiGitRepoForked } from "react-icons/bi";
-
-interface IOrganizationRepoLicense {
-  spdx_id: string;
-}
-
-interface IOrganizationRepos {
-  name: string;
-  description: string;
-  language: string;
-  license: IOrganizationRepoLicense;
-  stargazers_count: number;
-  forks_count: number;
-  visibility: string;
-}
-
-interface IRepoCardProps {
-  repository: IOrganizationRepos;
-}
+import { IRepoCardProps } from "../../types";
 
 export default function RepoCard({ repository }: IRepoCardProps) {
   function setLanguage(language: string) {

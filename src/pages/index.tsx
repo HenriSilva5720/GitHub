@@ -1,6 +1,7 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 import styles from "./home.module.css";
 import github_img from "../../public/github_img.svg";
 import { useOrganization } from "../providers/Organization";
@@ -20,6 +21,10 @@ export default function HomePage() {
 
   return (
     <>
+      <Head>
+        <link rel="shortcut icon" href="/github_favicon.svg" />
+        <title>GitHub</title>
+      </Head>
       <Header />
       <main className={styles.container}>
         <div className={styles.containerContent}>
