@@ -16,17 +16,13 @@
 
 ## 🚀 Começando
 
-#
-
 Projeto web Front end utilizando a API do GitHub. O aplicativo possui uma landing page para buscar organizações cadastradas no github e uma página para exibir as informações e repositórios do mesmo.
 
 ## ℹ️ Como Usar
 
-#
-
 Para executar este projeto, você precisará da seguinte dependência:
 
-- **Yarn** é um gerenciador de pacotes construído pela equipe do Facebook e parece ser mais rápido que o npm em geral. [Baixar Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable)
+- **Yarn** é um gerenciador de pacotes construído pela equipe do Facebook e parece ser mais rápido que o npm em geral. [Baixar Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable).
 
 Após a instalação, siga estes passos:
 
@@ -56,8 +52,6 @@ Após a instalação, siga estes passos:
 
 ## 📈 Sobre O Projeto
 
-#
-
 Como solicitado, o projeto foi feito utilizando a tecnologia Next.js e testes end-to-end.
 
 Este é o meu primeiro aplicativo usando Next. Eu já tinha algum conhecimento em React, então creio que tenha facilitado um pouco no fluxo de aprendizagem.
@@ -67,8 +61,6 @@ Muitas das experiências com React, eu trouxe para o Next. Uma tecnologia que eu
 Pela primeira vez também, utilizei o Cypress para realizar testes e2e. Tanto o Next, quanto o Cypress me impressionaram pela usabilidade, com certeza buscarei aprender e praticar mais essas tecnologias!
 
 ## 💻 Tecnologias
-
-#
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -81,8 +73,6 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [VSCode](https://code.visualstudio.com/) com [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) e [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ## 📝 Licença 
-
-#
 
 Este projeto está sob a licença do MIT. Consulte a [LICENSE](https://github.com/HenriSilva5720/Technical-Test-Apto/blob/master/LICENSE) para obter mais informações.
 
