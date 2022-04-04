@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, Dispatch, SetStateAction } from "react";
 
 interface IOrganizationRepoLicense {
   spdx_id: string;
@@ -47,4 +47,11 @@ export interface IRepoCardProps {
 export interface IOrganizationProps {
   organization: IOrganization;
   searchOrganization: (a: string) => Promise<void>;
+}
+
+export interface IPaginationProps {
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
+  previousPage: () => void;
+  nextPage: (a: number) => void;
 }

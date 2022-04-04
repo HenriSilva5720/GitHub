@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import RepoCard from "../../components/RepoCard";
 import { useOrganization } from "../../providers/Organization";
+import { usePage } from "../../providers/Pagination";
 import api from "../../services/api";
 import styles from "./organization.module.css";
 import { MdOutlineLocationOn } from "react-icons/md";
@@ -16,11 +17,11 @@ import { IOrganizationRepos } from "../../types";
 export default function OrganizationPage() {
   const { organization } = useOrganization();
 
+  const { page, setPage, previousPage, nextPage } = usePage();
+
   const [organizationRepos, setOrganizationRepos] = useState<
     IOrganizationRepos[]
   >([]);
-
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     api
@@ -28,18 +29,6 @@ export default function OrganizationPage() {
       .then((res) => setOrganizationRepos(res.data))
       .catch((err) => console.log(err));
   }, [page, organization.login]);
-
-  function previewPage() {
-    if (page <= 0) return;
-
-    setPage(page - 1);
-  }
-
-  function nextPage() {
-    if (organizationRepos.length < 10) return;
-
-    setPage(page + 1);
-  }
 
   return (
     <>
@@ -136,7 +125,7 @@ export default function OrganizationPage() {
               <button
                 className={styles.button}
                 disabled={page === 1 && true}
-                onClick={previewPage}
+                onClick={previousPage}
               >
                 <RiArrowLeftSLine className={styles.buttonIcon} />
                 Previous
@@ -170,7 +159,7 @@ export default function OrganizationPage() {
                 id="nextPage"
                 className={styles.button}
                 disabled={organizationRepos.length < 10 && true}
-                onClick={nextPage}
+                onClick={() => nextPage(organizationRepos.length)}
               >
                 Next
                 <RiArrowRightSLine className={styles.buttonIcon} />
