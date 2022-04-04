@@ -139,7 +139,7 @@ export default function OrganizationPage() {
                 onClick={previewPage}
               >
                 <RiArrowLeftSLine className={styles.buttonIcon} />
-                Preview
+                Previous
               </button>
             </a>
             <div className={styles.containerPageNumbers}>
@@ -167,6 +167,7 @@ export default function OrganizationPage() {
             </div>
             <a href="#top" className={styles.backToTop}>
               <button
+                id="nextPage"
                 className={styles.button}
                 disabled={organizationRepos.length < 10 && true}
                 onClick={nextPage}

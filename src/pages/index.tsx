@@ -36,6 +36,7 @@ export default function HomePage() {
           </p>
           <div className={styles.inputContainer}>
             <input
+              id="searchOrgInput"
               className={styles.input}
               placeholder="Search your org"
               value={input}
@@ -46,7 +47,11 @@ export default function HomePage() {
                 handleSubmit();
               }}
             />
-            <button className={styles.button} onClick={handleSubmit}>
+            <button
+              id="searchOrgButton"
+              className={styles.button}
+              onClick={handleSubmit}
+            >
               Search
             </button>
           </div>
