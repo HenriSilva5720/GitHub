@@ -1,25 +1,18 @@
 <div align="center">
-  <img src="https://i.imgur.com/QUPXcBT.png" alt="project-icon" />
-</div>
 
-<h1 align="center">GitHub</h1>
+![project-icon](https://i.imgur.com/QUPXcBT.png)
 
-<div align="center">
+# GitHub
 
-  ![version-bagde](https://img.shields.io/github/package-json/v/HenriSilva5720/Technical-Test-Apto) ![license-bagde](https://img.shields.io/badge/license-MIT-green)
-  ![deploy-bagde](https://img.shields.io/badge/deploy-vercel-lightgrey)
-
-</div>
-
-<div align="center">
+![version-bagde](https://img.shields.io/github/package-json/v/HenriSilva5720/Technical-Test-Apto) ![license-bagde](https://img.shields.io/badge/license-MIT-green)
+![deploy-bagde](https://img.shields.io/badge/deploy-vercel-lightgrey)
 
 [![github-bagde](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/HenriSilva5720)](https://github.com/HenriSilva5720)
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henrisilva/)](https://www.linkedin.com/in/henrisilva/)
 
-</div>
-
 ![aplication-landing-page](https://i.imgur.com/eN6mUKX.png)
 
+</div>
 
 ## 🚀 Começando
 
