@@ -55,7 +55,7 @@ export default function OrganizationPage() {
 
   return (
     <>
-      <Header />
+      <Header search={true} />
       <main className={styles.container}>
         <section className={styles.containerInfos}>
           <picture>

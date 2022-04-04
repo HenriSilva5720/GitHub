@@ -1,0 +1,98 @@
+.container {
+  width: 200px;
+  height: 40px;
+
+  padding: 3px 10px;
+
+  background-color: var(--white);
+
+  border-radius: 5px;
+
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  right: 50%;
+
+  transform: translateX(50%);
+
+  animation: inputAppear200 0.6s;
+}
+
+.input {
+  width: calc(100% - 16px);
+
+  background-color: transparent;
+  border: none;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+
+  cursor: pointer;
+
+  animation: iconAppear 0.8s;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 500px;
+
+    animation: inputAppear500 0.8s;
+  }
+}
+
+@keyframes inputAppear200 {
+  0% {
+    width: 30px;
+
+    opacity: 0;
+  }
+
+  30% {
+    width: 30px;
+
+    opacity: 1;
+  }
+
+  100% {
+    width: 200px;
+  }
+}
+
+@keyframes inputAppear500 {
+  0% {
+    width: 30px;
+
+    opacity: 0;
+  }
+
+  30% {
+    width: 30px;
+
+    opacity: 1;
+  }
+
+  100% {
+    width: 500px;
+  }
+}
+
+@keyframes iconAppear {
+  from {
+    width: 0px;
+    height: 0px;
+
+    opacity: 0;
+  }
+
+  to {
+    width: 16px;
+    height: 16px;
+
+    opacity: 1;
+  }
+}

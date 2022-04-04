@@ -6,11 +6,11 @@ import github_img from "../../public/github_img.svg";
 import { useOrganization } from "../providers/Organization";
 
 export default function HomePage() {
-  const [input, setInput] = useState("");
-
   const { searchOrganization } = useOrganization();
 
-  async function handleClick() {
+  const [input, setInput] = useState("");
+
+  async function handleSubmit() {
     if (!input) return;
 
     await searchOrganization(input);
@@ -38,10 +38,10 @@ export default function HomePage() {
               onKeyUp={(e) => {
                 if (e.key !== "Enter") return;
 
-                handleClick();
+                handleSubmit();
               }}
             />
-            <button className={styles.button} onClick={handleClick}>
+            <button className={styles.button} onClick={handleSubmit}>
               Search
             </button>
           </div>
