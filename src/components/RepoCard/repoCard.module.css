@@ -1,3 +1,7 @@
+.repoLink:hover {
+  text-decoration: none;
+}
+
 .repo {
   padding: 5px 10px;
 
@@ -5,6 +9,12 @@
   border-radius: 10px;
 
   word-wrap: break-word;
+
+  transition: all 0.5s;
+}
+
+.repo:hover {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .containerRepoInfo {

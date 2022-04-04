@@ -25,6 +25,7 @@ export interface IOrganizationRepos {
   stargazers_count: number;
   forks_count: number;
   visibility: string;
+  html_url: string;
 }
 
 export interface IProvidersProps {
