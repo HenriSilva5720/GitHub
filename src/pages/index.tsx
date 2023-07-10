@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       <Head>
         <link rel="shortcut icon" href="/github_favicon.svg" />
-        <title>GitHub</title>
+        <title>GitHub - teste para o zapier</title>
       </Head>
       <Header />
       <main className={styles.container}>
